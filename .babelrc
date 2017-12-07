@@ -1,0 +1,8 @@
+{
+  "presets": ["stage-0", "flow",  ["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "safari >= 7"]
+      }
+    }]],
+  "plugins": ["transform-class-properties"]
+}
