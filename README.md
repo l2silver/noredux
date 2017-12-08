@@ -37,10 +37,6 @@ I don't think most front-end applications are complicated enough to warrant even
 
 The basic problem with noredux is that setting up the reducers and initial state is more complicated than traditional redux. To achieve the scoping pattern that traditional redux combineReducers provides(or packages with similar functionality), every reducer essentially needs a selector function and a setter function. The selector function ensures that the reducer receives only the part of the store's state that it's entitled to work on, and the setter is the function that merges the results from the reducer back into the store.
 
-# Experimental
-
-I don't use noredux in production, and unless it miraculously gains the attention of a major tech corporation, I problably won't be using it in the future. I think it's an interesting technology though, and I thought I would open up the idea for anyone else looking to experiment with different ways of designing front-end applications. Technically speaking, this isn't event considered flux.
-
 # Example App
 
 Checkout the examples section for a working example of a react-noredux app
