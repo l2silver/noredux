@@ -9,8 +9,8 @@ export function scopeReducer<S, R>(selector: $selector<S, R>, setter: $setter<S,
     const splitFunc = state => {
       return setter(state, reducer(...args)(selector(state)))
     }
-    splitFunc.argz = args
-    splitFunc.nm = name
+    splitFunc.args = args
+    splitFunc.type = name
     return splitFunc
   }
 }
