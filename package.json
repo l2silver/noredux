@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "A non-event-driven version of redux",
   "scripts": {
+    "prepublish": "npm run lint && npm run test && rm -rf lib && npm run build",
     "build": "babel src --out-dir lib",
     "test": "jest src",
     "lint": "eslint src",

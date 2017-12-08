@@ -18,15 +18,22 @@ export function scopeReducer<S, R>(selector: $selector<S, R>, setter: $setter<S,
 export const defaultScopeReducer = (locations: string, reducer: $reducer, name?: string)=>{
   const locationsArray = locations.split('.')
   const selector = (state)=>locationsArray.reduce((finalResult, location)=>finalResult[location], state)
-  const setter = (state, result)=>({
-    ...locationsArray.reduce((finalResult, location, i)=>{
-      if(i === locationsArray.length - 1) {
-        finalResult[location] = result
-        return state
+  const setter = (state, result)=>{
+    const nextState = {...state}
+    const prevLoc = []
+    locationsArray.forEach((loc, i)=>{
+      const interState = prevLoc.reduce((finalResult, lloc)=>{
+        return finalResult[lloc]
+      }, nextState)
+      if(i === locationsArray.length - 1){
+        interState[loc] = result
+      } else {
+        interState[loc] = {...interState[loc]}
+        prevLoc.push(loc)
       }
-      return finalResult[location]
-    }, state)
-  })
+    })
+    return nextState
+  }
   return scopeReducer(selector, setter, reducer, `${locations}:${name}`)
 }
 
