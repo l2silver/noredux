@@ -1,5 +1,4 @@
 import reducer from '../reducers/todos'
-import { createAction } from 'redux-actions'
 
 export const addTodo = (payload)=>reducer['add todo'](payload)
 export const deleteTodo = (payload)=>reducer['delete todo'](payload)

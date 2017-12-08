@@ -2336,6 +2336,10 @@ nopt@^4.0.1:
     abbrev "1"
     osenv "^0.1.4"
 
+noredux@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/noredux/-/noredux-1.0.2.tgz#24e235c4393fd8103c8862da2f21542545628861"
+
 normalize-path@^2.0.0, normalize-path@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-2.1.1.tgz#1ab28b556e198363a8c1a6f7e6fa20137fe6aed9"
